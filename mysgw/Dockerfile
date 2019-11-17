@@ -24,15 +24,15 @@ LABEL \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
-    maintainer="Marco Ghiglieri <ghiglie@yahoo.it>" \
+    maintainer="Tilman Eggers <dev@tilmaneggers.de>" \
     org.label-schema.description="MySensors Gateway" \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="MySensors Gateway" \
     org.label-schema.schema-version="0.1" \
     org.label-schema.url="https://addons.community" \
-    org.label-schema.usage="https://github.com/ghiglie/hassio-addons/addon-mysgw/tree/master/README.md" \
+    org.label-schema.usage="https://git.home/teggers/hassio-mysensors-addon/src/branch/master/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \
-    org.label-schema.vcs-url="https://github.com/ghiglie/hassio-addons/addon-mysgw" \
-    org.label-schema.vendor="Marco Ghiglieri Hass.io Add-ons"
+    org.label-schema.vcs-url="https://git.home/teggers/hassio-mysensors-addon" \
+    org.label-schema.vendor="Tilman Egger Hass.io MySensors Add-on"
 
 CMD [ "/run.sh" ]
