@@ -1,6 +1,6 @@
 {
   "name": "MySensors Gateway",
-  "version": "0.1",
+  "version": "0.1.1",
   "slug": "mysgw",
   "description": "MySensors Gateway Add-on",
   "url": "https://github.com/tiegs/hassio-addons",
