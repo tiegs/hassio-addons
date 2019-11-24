@@ -1,6 +1,6 @@
 #!/bin/ash
 
-echo "MySensors Gateway"
+echo "MySensors Gateway Init..."
 MYSGW_TYPE=$(jq ".type" "${CONFIG_PATH}")
 MYSGW_TRN=$(jq ".transport" "${CONFIG_PATH}")
 MQTT_SERVER=$(jq ".mqtt_server" "${CONFIG_PATH}")
@@ -13,4 +13,6 @@ MQTT_OPTS="--my-mqtt-client-id=$MQTT_CLIENTID --my-controller-url-address=$MQTT_
 cd $APPDIR
 ./configure --spi-spidev-device=/dev/spidev0.0 --my-transport=$MYSGW_TRN --my-gateway=$MYSGW_TYPE $MQTT_OPTS
 make && make install
+
+echo "Starting MySensors Gateway..."
 ./bin/mysgw --daemon
