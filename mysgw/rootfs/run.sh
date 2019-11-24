@@ -1,5 +1,4 @@
 #!/bin/ash
-source /usr/lib/hassio-addons/base.sh
 
 echo "MySensors Gateway"
 MYSGW_TYPE=$(hass.jq "${CONFIG_PATH}" ".type")
