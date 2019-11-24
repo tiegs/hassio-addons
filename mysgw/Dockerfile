@@ -9,13 +9,9 @@ FROM ${BUILD_FROM}
 ENV CONFIG_PATH=/data/options.json
 ENV APPDIR=/opt/MySensors
 COPY rootfs /
-RUN  chmod a+x /run.sh && \ 
-     apt-get update && apt-get install -y --force-yes \
-     make \
-     g++ \
-     git \
-     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ~/.cache \
-     && git clone https://github.com/mysensors/MySensors.git --branch master $APPDIR
+RUN  chmod a+x /run.sh && \
+     apk add g++ make git linux-headers && \
+     git clone https://github.com/mysensors/MySensors.git --branch master $APPDIR
 
 # Labels
 LABEL \
@@ -30,9 +26,9 @@ LABEL \
     org.label-schema.name="MySensors Gateway" \
     org.label-schema.schema-version="0.1" \
     org.label-schema.url="https://addons.community" \
-    org.label-schema.usage="https://git.home/teggers/hassio-mysensors-addon/src/branch/master/README.md" \
+    org.label-schema.usage="https://github.com/tiegs/hassio-addons/src/branch/master/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \
-    org.label-schema.vcs-url="https://git.home/teggers/hassio-mysensors-addon" \
+    org.label-schema.vcs-url="https://github.com/tiegs/hassio-addons/mysgw" \
     org.label-schema.vendor="Tilman Egger Hass.io MySensors Add-on"
 
 CMD [ "/run.sh" ]
