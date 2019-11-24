@@ -16,6 +16,9 @@ echo MQTT_CLIENTID: $MQTT_CLIENTID
 echo MQTT_TOPIC_IN: $MQTT_TOPIC_IN
 echo MQTT_TOPIC_OUT: $MQTT_TOPIC_OUT
 
+# SPI listing
+ls /dev/spidev*
+
 MQTT_OPTS="--my-mqtt-client-id=$MQTT_CLIENTID --my-controller-url-address=$MQTT_SERVER --my-mqtt-publish-topic-prefix=$MQTT_TOPIC_OUT --my-mqtt-subscribe-topic-prefix=$MQTT_TOPIC_IN"
 
 cd $APPDIR
