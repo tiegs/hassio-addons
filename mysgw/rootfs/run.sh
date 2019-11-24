@@ -8,6 +8,14 @@ MQTT_CLIENTID=$(jq ".mqtt_clientid" "${CONFIG_PATH}")
 MQTT_TOPIC_IN=$(jq ".mqtt_topicin" "${CONFIG_PATH}")
 MQTT_TOPIC_OUT=$(jq ".mqtt_topicout" "${CONFIG_PATH}")
 
+## DEBUG
+echo MYSGW_TYPE: $MYSGW_TYPE
+echo MYSGW_TRN: $MYSGW_TRN
+echo MQTT_SERVER: $MQTT_SERVER
+echo MQTT_CLIENTID: $MQTT_CLIENTID
+echo MQTT_TOPIC_IN: $MQTT_TOPIC_IN
+echo MQTT_TOPIC_OUT: $MQTT_TOPIC_OUT
+
 MQTT_OPTS="--my-mqtt-client-id=$MQTT_CLIENTID --my-controller-url-address=$MQTT_SERVER --my-mqtt-publish-topic-prefix=$MQTT_TOPIC_OUT --my-mqtt-subscribe-topic-prefix=$MQTT_TOPIC_IN"
 
 cd $APPDIR
