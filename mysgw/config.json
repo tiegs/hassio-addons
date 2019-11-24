@@ -18,9 +18,6 @@
   "ports": {
     "5003/tcp": 5003
   },
-  "requirements": [
-    "rpi-rf"
-  ],
   "clean": true,
   "options": {
     "log_level": "info",
