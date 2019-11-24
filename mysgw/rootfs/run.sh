@@ -23,4 +23,4 @@ cd $APPDIR
 make
 
 echo "Starting MySensors Gateway..."
-./bin/mysgw --daemon
+./bin/mysgw
