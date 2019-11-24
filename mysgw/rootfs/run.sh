@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv bash
+#!/bin/ash
 source /usr/lib/hassio-addons/base.sh
 
 echo "MySensors Gateway"
