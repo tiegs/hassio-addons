@@ -22,7 +22,7 @@ echo "SPI devices available:"
 ls /dev/spidev*
 
 MQTT_OPTS="--my-mqtt-client-id=$MQTT_CLIENTID --my-controller-url-address=$MQTT_SERVER --my-mqtt-publish-topic-prefix=$MQTT_TOPIC_OUT --my-mqtt-subscribe-topic-prefix=$MQTT_TOPIC_IN"
-PLATFORM_OPTS="--my-config-file=/data/mysensors.conf --spi-driver=BCM --soc=BCM2836"
+PLATFORM_OPTS="--my-config-file=/data/mysensors.conf --spi-driver=BCM --soc=BCM2835"
 OPTIMIZE_OPTS="--cpu-flags=\"-mcpu=cortex-a53 -mfpu=neon-fp-armv8\""  
 
 cd $APPDIR
