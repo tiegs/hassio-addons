@@ -1,6 +1,6 @@
 {
   "name": "MySensors Gateway",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "slug": "mysgw",
   "description": "MySensors Gateway Add-on",
   "url": "https://github.com/tiegs/hassio-addons",
@@ -23,7 +23,7 @@
     "log_level": "info",
     "type": "mqtt",
     "mqtt_server": "addon_core_mosquitto.hassio",
-    "transport": "nrf24", 
+    "transport": "rf24", 
     "mqtt_clientid": "mysgw-00",
     "mqtt_topicin": "mysensors-in",
     "mqtt_topicout": "mysensors-out"
