@@ -19,11 +19,17 @@ echo MQTT_TOPIC_OUT: $MQTT_TOPIC_OUT
 # SPI listing
 ls /dev/spidev*
 
+CONF_OPTS="--my-config-file=/data/mysensors.conf --spi-driver=BCM --soc=BCM2836 --cpu-flags=\"-mcpu=cortex-a53 -mfloat-abi=hard -mfpu=neon-fp-armv8 -mneon-for-64bits -mtune=cortex-a53\""
 MQTT_OPTS="--my-mqtt-client-id=$MQTT_CLIENTID --my-controller-url-address=$MQTT_SERVER --my-mqtt-publish-topic-prefix=$MQTT_TOPIC_OUT --my-mqtt-subscribe-topic-prefix=$MQTT_TOPIC_IN"
 
 cd $APPDIR
-echo "./configure --my-transport=$MYSGW_TRN --my-gateway=$MYSGW_TYPE $MQTT_OPTS"
-./configure --my-transport=$MYSGW_TRN --my-gateway=$MYSGW_TYPE $MQTT_OPTS
+echo "./configure --my-transport=$MYSGW_TRN --my-gateway=$MYSGW_TYPE $MQTT_OPTS $CONF_OPTS"
+LDFLAGS="-static" ./configure \
+  --my-transport=$MYSGW_TRN \
+  --my-gateway=$MYSGW_TYPE \
+  $MQTT_OPTS \
+  $CONF_OPTS
+  
 make
 
 echo "Starting MySensors Gateway..."
