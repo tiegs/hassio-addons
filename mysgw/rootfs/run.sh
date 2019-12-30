@@ -28,13 +28,12 @@ OPTIMIZE_OPTS="--cpu-flags=\"-mcpu=cortex-a53 -mfpu=neon-fp-armv8\""
 cd $APPDIR
 echo "### Building MySensors version: $(cat library.properties | grep version | cut -d= -f2)"
 
-echo "./configure --my-transport=$MYSGW_TRN --my-gateway=$MYSGW_TYPE $MQTT_OPTS $PLATFORM_OPTS $OPTIMIZE_OPTS"
+echo "./configure --my-transport=$MYSGW_TRN --my-gateway=$MYSGW_TYPE $MQTT_OPTS $PLATFORM_OPTS"
 LDFLAGS="-static" ./configure \
   --my-transport=$MYSGW_TRN \
   --my-gateway=$MYSGW_TYPE \
   $MQTT_OPTS \
-  $PLATFORM_OPTS \
-  $OPTIMIZE_OPTS
+  $PLATFORM_OPTS
   
 make
 
