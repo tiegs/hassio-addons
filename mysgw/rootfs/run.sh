@@ -25,14 +25,13 @@ CONF_OPTS="--my-config-file=/data/mysensors.conf --spi-driver=BCM --soc=BCM2836 
 MQTT_OPTS="--my-mqtt-client-id=$MQTT_CLIENTID --my-controller-url-address=$MQTT_SERVER --my-mqtt-publish-topic-prefix=$MQTT_TOPIC_OUT --my-mqtt-subscribe-topic-prefix=$MQTT_TOPIC_IN"
 
 cd $APPDIR
-RUN echo "Building MySensors version: $(cat library.properties | grep version | cut -d= -f2)-$(git describe --tags)"
+echo "Building MySensors version: $(cat library.properties | grep version | cut -d= -f2)-$(git describe --tags)"
 
-echo "./configure --my-transport=$MYSGW_TRN --my-gateway=$MYSGW_TYPE $MQTT_OPTS $CONF_OPTS"
+echo "./configure --my-transport=$MYSGW_TRN --my-gateway=$MYSGW_TYPE $MQTT_OPTS"
 LDFLAGS="-static" ./configure \
   --my-transport=$MYSGW_TRN \
   --my-gateway=$MYSGW_TYPE \
-  $MQTT_OPTS \
-  $CONF_OPTS
+  $MQTT_OPTS
   
 make
 
