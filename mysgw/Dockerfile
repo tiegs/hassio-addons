@@ -6,6 +6,8 @@ ARG BUILD_VERSION
 
 FROM ${BUILD_FROM}
 
+VOLUME /data
+
 ENV CONFIG_PATH=/data/options.json
 ENV APPDIR=/opt/MySensors
 COPY rootfs /
