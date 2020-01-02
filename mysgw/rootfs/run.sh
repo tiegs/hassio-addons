@@ -17,6 +17,7 @@ echo MQTT_SERVER: $MQTT_SERVER
 echo MQTT_CLIENTID: $MQTT_CLIENTID
 echo MQTT_TOPIC_IN: $MQTT_TOPIC_IN
 echo MQTT_TOPIC_OUT: $MQTT_TOPIC_OUT
+echo EXEC_CMD: $EXEC_CMD
 
 # SPI listing
 echo "SPI devices available:"
