@@ -8,6 +8,7 @@ MQTT_SERVER=$(jq -r ".mqtt_server" "${CONFIG_PATH}")
 MQTT_CLIENTID=$(jq -r ".mqtt_clientid" "${CONFIG_PATH}")
 MQTT_TOPIC_IN=$(jq -r ".mqtt_topicin" "${CONFIG_PATH}")
 MQTT_TOPIC_OUT=$(jq -r ".mqtt_topicout" "${CONFIG_PATH}")
+EXEC_CMD=$(jq -r ".execute_command" "${CONFIG_PATH}")
 
 ## DEBUG
 echo MYSGW_TYPE: $MYSGW_TYPE
@@ -45,4 +46,4 @@ LDFLAGS="-static" ./configure \
 make
 
 echo "Starting MySensors Gateway..."
-./bin/mysgw
+eval $EXEC_CMD
