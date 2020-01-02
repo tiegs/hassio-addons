@@ -1,6 +1,6 @@
 {
   "name": "MySensors Gateway",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "slug": "mysgw",
   "description": "MySensors Gateway Add-on",
   "url": "https://github.com/tiegs/hassio-addons",
@@ -26,7 +26,8 @@
     "transport": "rf24", 
     "mqtt_clientid": "mysgw-00",
     "mqtt_topicin": "mysensors-in",
-    "mqtt_topicout": "mysensors-out"
+    "mqtt_topicout": "mysensors-out",
+    "execute_command": "./bin/mysgw"
   },
   "schema": {
     "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)",
