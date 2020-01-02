@@ -11,6 +11,9 @@ MQTT_TOPIC_OUT=$(jq -r ".mqtt_topicout" "${CONFIG_PATH}")
 EXEC_CMD=$(jq -r ".execute_command" "${CONFIG_PATH}")
 
 ## DEBUG
+echo "Config file: ${CONFIG_PATH}:"
+cat $CONFIG_PATH
+
 echo MYSGW_TYPE: $MYSGW_TYPE
 echo MYSGW_TRN: $MYSGW_TRN
 echo MQTT_SERVER: $MQTT_SERVER
